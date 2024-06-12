@@ -1,0 +1,49 @@
+.home {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.home__container {
+    width: 90%;
+    margin: 0 auto;
+    padding-bottom: 3rem;
+    box-sizing: border-box;
+}
+
+.home__image {
+    width: 100%;
+    z-index: -1;
+    margin-bottom: -345px;
+    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.0));
+}
+
+.home__row {
+    display: flex;
+    position: relative;
+    z-index: 50;
+    width: 98%;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.home__ads__row {
+    display: flex;
+    position: relative;
+    z-index: 50;
+    width: 98%;
+    height: 12rem;
+    padding: 2rem;
+    background-color: white;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.product__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}

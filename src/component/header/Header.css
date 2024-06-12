@@ -1,0 +1,125 @@
+.header__wrapper {
+    position: sticky;
+    top: 0;
+    z-index: 500;
+}
+
+.header {
+    display: flex;
+    height: 60px;
+    align-items: center;
+    gap: 1rem;
+    padding: 0 1.5rem;
+    background-color: #131921;
+}
+
+.header__brand {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+}
+
+.header__logo {
+    width: 100px;
+    object-fit: contain;
+    margin-top: 18px;
+}
+
+.header__deliver__to {
+    display: flex;
+    align-items: center;
+    padding: 4px 8px;
+}
+
+.header__deliverLogo {
+    padding: 5px;
+    height: 22px!important;
+    color: white;
+}
+
+.header__search {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.header__searchLogo {
+    padding: 5px;
+    height: 33px !important;
+    width: 42px!important;
+    background-color: #cd9042;
+    border-radius: 0 5px 5px 0;
+}
+
+.header__searchSelect {
+    height: 43px;
+    width: 54px;
+    text-align: center;
+    border: none;
+    outline: none;
+    padding: 5px;
+    border-radius: 5px 0 0 5px;
+    background-color: gray!important;
+}
+
+.header__searchInput {
+    flex: 1;
+    padding: 5px;
+    border: none;
+    outline: none;
+    height: 32px;
+}
+
+.header__nav {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.header__option, 
+.header__deliver__to_text {
+    display: flex;
+    flex-direction: column;
+    color: white;
+}
+
+.header__optionLocation {
+    display: flex;
+    color: white;
+    gap: 4px;
+    margin-bottom: -4px;
+    box-sizing: border-box;
+}
+
+.header__optionLineOne {
+    font-size: 12px;
+}
+
+.header__optionLineTwo {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.cart {
+    flex-direction: row;
+    text-align: center!important;
+    gap: 4px;
+}
+
+.cart__number {
+    color: #cd9042;
+    padding-top: 2px;
+}
+
+.header__down_nav {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    align-items: center;
+    padding: .5rem 1rem;
+    background-color: #131921dd;
+    color: white;
+    font-size: 12px;
+    height: 34px;
+    box-sizing: border-box;
+}

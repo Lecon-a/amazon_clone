@@ -1,7 +1,12 @@
+import { useState } from "react";
 import "./Checkout.css";
 import SubTotal from "./subtotal/SubTotal";
+import Basket from "./basket/Basket";
 
 function Checkout() {
+
+  const [display, setDisplay] = useState(false);
+
   return (
     <div className='checkout'>
         <div className="checkout__container">
@@ -12,10 +17,28 @@ function Checkout() {
               </div>
               <h2 className="checkout__title">
                   Your shopping Basket
+            <div className={display? "change__orientation__vertical" : "change__orientation"} onClick={() => {
+              setDisplay(!display)
+            }}>
+              <div className={display ? "bars__full" : "bars"}></div>
+              <div className={display ? "bars__full" : "bars"}></div>
+              <div className={display ? "bars__full" : "bars"}></div>
+              <div className={display ? "bars__full" : "bars"}></div>
+                  </div>
               </h2>
-              <div className="basket__wrapper">
+          <div className={display ? "basket__wrapper__grid" : "basket__wrapper"}>
                 {/* Basket goes here */}
-                All added products
+                <Basket display={display} />
+                <Basket display={display} />
+                <Basket display={display} />
+                <Basket display={display} />
+                <Basket display={display} />
+                <Basket display={display} />
+                <Basket display={display} />
+                <Basket display={display} />
+                <Basket display={display} />
+                <Basket display={display} />
+                <Basket display={display} />
               </div>
             </div>
             <div className="checkout__right">

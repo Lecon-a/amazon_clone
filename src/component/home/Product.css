@@ -8,6 +8,7 @@
 
 .product:hover {
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.25);
+    border: 1px solid white;
 }
 
 .product__image_gallery {
@@ -49,6 +50,7 @@
 .product__image:hover,
 .product_img_style_one:hover {
     box-shadow: 1px 2px 8px rgba(0, 0, 0, 0.25);
+    width: 47.5%; 
 }
 
 .product__name {

@@ -4,6 +4,10 @@
     z-index: 500;
 }
 
+.tabs {
+    text-decoration: none;
+}
+
 .header {
     display: flex;
     height: 60px;

@@ -17,8 +17,10 @@ const ProductCard = ({
                     <div className="productCard__info">
                         <strong className="products__name">{product.product_name}</strong>
                         <div className="__info">
-                    <span className="products__price">{product.price}</span>
-                    <span className="products__rating">rating {product.rating}</span>
+                        <span className="products__price">$<strong>{product.price}</strong></span>
+                        <div>
+                            {Array(product.rating).fill().map((_, i) => <span key={i} className="products__rating">🚀</span>)}
+                        </div>
                         </div>
                     </div>
                 <button className="add__to__cart__button" onClick={() => handleAddToCart(product)}>Add to Cart</button>

@@ -17,26 +17,26 @@ const Home = () => {
         {
             product_image: headset,
             product_name: "Headsets",
-            price: "$100",
+            price: 24.99,
             rating: 4,
         },
         {
             product_image: keyboard,
             product_name:"Keyboards",
-            price: "$100",
-            rating: 4,
+            price: 120,
+            rating: 3,
         },
         {
             product_image: mice,
             product_name:"Computer mice",
-            price: "$100",
+            price: 14.99,
             rating: 4,
         },
         {
             product_image: chair,
             product_name:"Chairs",
-            price: "$100",
-            rating: 4,
+            price: 99.99,
+            rating: 5,
         },
     ])
 

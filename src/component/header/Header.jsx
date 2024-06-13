@@ -39,19 +39,19 @@ const Header = () => {
                     <div className="header__optionLogo">🇳🇬</div>
                     <div className="header__optionLineTwo">NIG</div>
                 </div>
-                <Link to={"/login"}>
+                <Link className="tabs" to={"/login"}>
                     <div className="header__option">
                         <span className="header__optionLineOne">Hello Guest</span>
                         <span className="header__optionLineTwo">Sign In</span>
                     </div>
                 </Link>
-                <Link to={"/orders"}>
+                <Link className="tabs" to={"/orders"}>
                     <div className="header__option">
                         <span className="header__optionLineOne">Returns</span>
                         <span className="header__optionLineTwo">& Orders</span>
                     </div>
                 </Link>
-                <Link to={"/checkout"}>
+                <Link className="tabs" to={"/checkout"}>
                     <div className="header__option cart">
                         <ShoppingBasket className="cart__icon"/>
                         <span className="header__optionLineTwo cart__number">0</span>

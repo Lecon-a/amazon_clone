@@ -2,18 +2,29 @@ import "./Header.css";
 import { Link } from "react-router-dom";
 import { PlaceOutlined, Search } from "@material-ui/icons";
 import { ShoppingBasket } from "@material-ui/icons";
-import ShoppingCartCheckoutIcon from '@mui/icons-material/ShoppingCartCheckout';
+import { useAppSelector } from "../../redux/hooks";
+import { totalItemSelected } from "../../redux/actions";
+// import { auth } from "../../firebase";
+import Brand from "../Brand";
+
+const brand_path = "http://pngimg.com/uploads/amazon/amazon_PNG11.png";
+
 
 const Header = () => {
+
+    const { basket, user } = useAppSelector(state => state.basket);
+
+    const handleLogOut = () => {
+        if (user) {
+            // auth.signOut();
+        }
+    }
+
     return <div className="header__wrapper">
         <div className="header">
             <Link className="header__brand" to={"/"}>
                 SPaICTHub
-                {/* <img 
-                    src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" 
-                    alt="" 
-                    className="header__logo" 
-                /> */}
+                {/* <Brand brand_path={brand_path} /> */}
             </Link>
 
             <div className="header__deliver__to">
@@ -39,10 +50,10 @@ const Header = () => {
                     <div className="header__optionLogo">🇳🇬</div>
                     <div className="header__optionLineTwo">NIG</div>
                 </div>
-                <Link className="tabs" to={"/login"}>
-                    <div className="header__option">
-                        <span className="header__optionLineOne">Hello Guest</span>
-                        <span className="header__optionLineTwo">Sign In</span>
+                <Link className="tabs" to={!user && "/login"}>
+                    <div className="header__option" onClick={handleLogOut}>
+                        <span className="header__optionLineOne">Hello {user? "," + user.email : "Guest"}</span>
+                        <span className="header__optionLineTwo">{user? "Sign Out" : "Sign In"}</span>
                     </div>
                 </Link>
                 <Link className="tabs" to={"/orders"}>
@@ -54,7 +65,7 @@ const Header = () => {
                 <Link className="tabs" to={"/checkout"}>
                     <div className="header__option cart">
                         <ShoppingBasket className="cart__icon"/>
-                        <span className="header__optionLineTwo cart__number">0</span>
+                        <span className="header__optionLineTwo cart__number">{totalItemSelected(basket)}</span>
                     </div>
                 </Link>
             </div>

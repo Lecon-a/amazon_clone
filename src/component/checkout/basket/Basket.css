@@ -56,6 +56,13 @@ small {
     gap: .125rem;
 }
 
+.subtotal__buttons {
+    display: flex;
+    flex-direction: row!important;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .remove__button {
     background-color: #f0c14b;
     border-radius: 2px;
@@ -67,3 +74,45 @@ small {
     cursor: pointer;
     box-sizing: border-box;
 }
+
+.subtotal__quantity {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subtotal__quantity > * {
+    height: 28px;
+    width: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    border: 1px solid #999;
+    cursor: none;
+    box-sizing: border-box;
+}
+
+.subtotal__quantity > small {
+    border: none;
+    border-top: 1px solid #999;
+    border-bottom: 1px solid #999;
+}
+
+.subtotal__quantity > button {
+    cursor: pointer;
+    background-color: #999;
+    color: white;
+}
+
+.subtotal__quantity>button:first-child {
+    border-radius: 12.5px 0 0 12.5px;   
+    border-right: none;
+}
+
+.subtotal__quantity>button:last-child {
+    border-radius: 0 12.5px 12.5px 0;
+    border-left: none;
+}
+

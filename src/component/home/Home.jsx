@@ -15,28 +15,36 @@ const Home = () => {
 
     const [data] = useState([
         {
+            id: "prod0001",
             product_image: headset,
             product_name: "Headsets",
             price: 24.99,
             rating: 4,
+            description: "Product description goes here",
         },
         {
+            id: "prod0002",
             product_image: keyboard,
             product_name:"Keyboards",
             price: 120,
             rating: 3,
+            description: "Product description goes here",
         },
         {
+            id: "prod0003",
             product_image: mice,
             product_name:"Computer mice",
             price: 14.99,
             rating: 4,
+            description: "Product description goes here",
         },
         {
+            id: "prod0004",
             product_image: chair,
             product_name:"Chairs",
             price: 99.99,
             rating: 5,
+            description: "Product description goes here",
         },
     ])
 

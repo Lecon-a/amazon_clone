@@ -7,10 +7,9 @@ function ProductPopup({category, products, close}) {
       <div className="popup__product">
         <div className="close__icon" onClick={close}>X</div>
         {<ProductCard
-                  productTitle={category}
-                  products={products}
-            />
-                        }
+            productTitle={category}
+            products={products}
+        />}
       </div>
     </div>
   )

@@ -1,28 +1,73 @@
-import React from 'react'
 import "./Basket.css";
-import headset from "../../../assets/images/game/headset.jpg";
+import { useAppDispatch } from "../../../redux/hooks";
+import {
+  removeFromCart,
+  increaseQuantity,
+  decreaseQuantity,
+} from "../../../redux/cartSlice";
 
+function Basket({ display, item }) {
 
-function Basket({ display }) {
-  
-  const handleRemoveItem = () => {
-      alert("Remove Item")
-  }
+  const dispatch = useAppDispatch();
+
+  const handleRemoveItem = (id) => {
+    dispatch(removeFromCart(id));
+  };
+
+  const handleIncreaseQuantity = (id) => {
+    dispatch(increaseQuantity(id))
+  };
+
+  const handleDecreaseQuantity = (id) => {
+    dispatch(decreaseQuantity(id))
+  };
 
   return (
-    <div className={display ? 'basket__grid' : 'basket'}>
-      <img src={headset} alt="product selected" />
+    <div className={display ? "basket__grid" : "basket"}>
+      <img src={item.product_image} alt="product selected" />
       <div className="selected__product__info">
-        <h2><strong>Headset</strong></h2>
-        {display ? "" : <div className='description'>Lorem ipsum dolor sit amet consectetur adipisicing elit. In repellat vel voluptatibus inventore unde, repudiandae minus iure facilis, soluta esse nam dicta expedita blanditiis! Debitis corporis cumque temporibus fuga incidunt!</div>}
+        <h2>
+          <strong>{item.product_name}</strong>
+        </h2>
+        {display ? (
+          ""
+        ) : (
+          <div className="description">
+            {item.description ? item.description : "No description"}
+          </div>
+        )}
         <div>
-          <small>$<h3>99.99</h3> </small>
-          <small>Color: <strong>Cyan</strong></small>
+          <small>
+            $<h3>{item.price}</h3>{" "}
+          </small>
+          <small>
+            Color:{" "}
+            <strong>{item.color ? item.color : "Color not specified"}</strong>
+          </small>
+          <small>
+            {Array(item.rating)
+              .fill()
+              .map(() => "🌟")}
+          </small>
         </div>
-        <button className='remove__button' onClick={handleRemoveItem}>Remove</button>
+        <div className="subtotal__buttons">
+          <div className="subtotal__quantity">
+            <button onClick={() => handleDecreaseQuantity(item.id)}>-</button>
+            <small>
+              <strong>{item.quantity}</strong>
+            </small>
+            <button onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+          </div>
+          <button
+            className="remove__button"
+            onClick={() => handleRemoveItem(item.id)}
+          >
+            Remove
+          </button>
+        </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default Basket
+export default Basket;

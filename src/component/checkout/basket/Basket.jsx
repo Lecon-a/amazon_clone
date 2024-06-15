@@ -6,7 +6,7 @@ import {
   decreaseQuantity,
 } from "../../../redux/cartSlice";
 
-function Basket({ display, item }) {
+function Basket({ display, item, isPaymentPage }) {
 
   const dispatch = useAppDispatch();
 
@@ -50,7 +50,7 @@ function Basket({ display, item }) {
               .map(() => "🌟")}
           </small>
         </div>
-        <div className="subtotal__buttons">
+        {!isPaymentPage && <div className="subtotal__buttons">
           <div className="subtotal__quantity">
             <button onClick={() => handleDecreaseQuantity(item.id)}>-</button>
             <small>
@@ -64,7 +64,7 @@ function Basket({ display, item }) {
           >
             Remove
           </button>
-        </div>
+        </div>}
       </div>
     </div>
   );

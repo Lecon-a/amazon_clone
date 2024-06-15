@@ -1,31 +1,33 @@
 import "./SubTotal.css";
 import { useAppSelector } from '../../../redux/hooks';
 import CurrencyFormat from "react-currency-format";
-import { totalCostOfItemSelected, totalItemSelected }  from "../../../redux/actions";
+import { totalCostOfItemSelected, totalItemSelected } from "../../../redux/actions";
+// import { useHistory } from "react-router-dom";
 
-function SubTotal() {
+function SubTotal({isPaymentPage}) {
 
+  // const history = useHistory();
   const { basket } = useAppSelector(state => state.basket);
 
   const handleProceedToCheckout = () => {
-    alert("Proceed to Checkout");
+    // history.push("/payment")
   }
 
   return (
-    <div className="subtotal">
+    <div className={isPaymentPage? "payment__page" : "subtotal"}>
       <CurrencyFormat
         renderText={(value) => (
           <>
             <p>
-              Subtotal ({totalItemSelected(basket)}{" "}
-              {totalItemSelected(basket) > 1 ? "items" : "item"}):{" "}
+              {isPaymentPage ? "Order Total: " : `Subtotal (${totalItemSelected(basket)}{" "}
+              ${totalItemSelected(basket) > 1 ? "items" : "item"}):{" "}`}
               <strong>{value}</strong>
             </p>
-            <small className="subtotal__gift">
+            {isPaymentPage ? "" : <small className="subtotal__gift">
               <input type="checkbox" /> This order contains a gift
-            </small>
-            <button onClick={handleProceedToCheckout}>
-              Proceed to Checkout
+            </small>}
+            <button onClick={isPaymentPage ? "" : handleProceedToCheckout}>
+              {isPaymentPage ? "Buy Now" : "Proceed to Checkout"}
             </button>
           </>
         )}

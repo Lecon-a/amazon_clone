@@ -9,7 +9,11 @@ import ShowMoreProduct from "./component/show_more/ShowMoreProduct";
 import { useEffect } from "react";
 import { useAppSelector, useAppDispatch } from "./redux/hooks";
 import { setUser } from "./redux/cartSlice";
-useAppSelector
+import Payment from "./component/checkout/payment/Payment";
+// import { loadStripe } from "@stripe/react-stripe-js";
+// import { Elements } from "@stripe/react-stripe-js";
+
+// const promise = loadStripe('Public API Key')
 
 function App() {
 
@@ -33,63 +37,80 @@ function App() {
     <Router>
       <div className="app">
         <Routes>
-
-              {/* <Route
+          {/* <Route
                   path="/login"
                   element={
                     <>
                       <Login />
                     </>}
               /> */}
-              
-              <Route
-                  path="/more_products"
-                  element={
-                    <>
-                      <Header />
-                      <ShowMoreProduct />
-                    </>}
-              />
-              
-              <Route
-                      path="/orders"
-                      element={
-                        <>
-                          <Header />
-                          <Orders />
-                        </>}
-              />
-          
-              <Route
-                  path="/checkout"
-                  element={
-                    <>
-                      <Header />
-                      <Checkout />
-                    </>}
-              />
-          
-                <Route
-                  path="/"
-                  element={
-                    <>
-                      <Header />
-                      <Home />
-                    </>}
-                />
-          
-                <Route
-                  path="*"
-                  element={<>
-                    <Header />
-                    <h1>Page Not Found</h1>
-                  </>}
-                />
-          
-          </Routes>
-        </div>
+
+          <Route
+            path="/more_products"
+            element={
+              <>
+                <Header />
+                <ShowMoreProduct />
+              </>
+            }
+          />
+
+          <Route
+            path="/orders"
+            element={
+              <>
+                <Header />
+                <Orders />
+              </>
+            }
+          />
+
+          <Route
+            path="/checkout"
+            element={
+              <>
+                <Header />
+                <Checkout />
+              </>
+            }
+          />
+
+          <Route
+            path="/payment"
+            element={
+              <>
+                <Header />
+                {/* <Elements stripe={promise}>
+                  <Payment />
+                </Elements> */}
+                <Payment />
+              </>
+            }
+          />
+
+          <Route
+            path="/"
+            element={
+              <>
+                <Header />
+                <Home />
+              </>
+            }
+          />
+
+          <Route
+            path="*"
+            element={
+              <>
+                <Header />
+                <h1>Page Not Found</h1>
+              </>
+            }
+          />
+        </Routes>
+      </div>
     </Router>
-  )
+  );
 }
 
 export default App

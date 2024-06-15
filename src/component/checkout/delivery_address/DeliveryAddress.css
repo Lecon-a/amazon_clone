@@ -1,0 +1,22 @@
+.address {
+    flex: 1;
+    padding: 0 1rem;
+    line-height: 1.5;
+}
+
+.address__wrapper {
+    display: flex;
+    gap: .5rem;
+    padding: 1rem 2rem;
+    border-bottom: 1px solid lightgray;
+}
+
+.address__title {
+    width: 15rem;
+    padding: .25rem 0;
+}
+
+.mailing {
+    display: flex;
+    gap: .25rem;
+}

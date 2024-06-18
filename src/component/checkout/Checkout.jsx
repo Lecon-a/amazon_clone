@@ -14,9 +14,9 @@ function Checkout() {
       <div className="checkout__container">
         <div className="checkout__left">
           {/* ads first */}
-          <div className="checkout__ads">{/* 100% x 100px banner */}</div>
+          <div className="checkout__ads"></div>
+          <h3 className="checkout__user">Hello, {user?.email}</h3>
           <h2 className="checkout__title">
-            {/* <h3>Hello, {user.email}</h3> */}
             Your shopping Basket
             <div
               className={

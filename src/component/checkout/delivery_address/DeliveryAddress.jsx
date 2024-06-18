@@ -11,13 +11,13 @@ const DeliveryAddress = () => {
         <p>
           Phone Number: <strong>{"+234810 0000 000"}</strong>
         </p>
-        <p className="mailing">
+        <div className="mailing">
           <p>Mailing: </p>
           <strong>
             123 React Lane
             Army Engineer, Nigeria.
           </strong>
-        </p>
+        </div>
       </div>
     </div>
   );

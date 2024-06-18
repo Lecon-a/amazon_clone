@@ -56,6 +56,13 @@ const basketSlice = createSlice({
             }
         },
 
+        emptyBasket(state) {
+            return {
+                ...state,
+                basket: [],
+            }
+        },
+
         setUser(state, action: PayloadAction<basketState>) {
             return {
                 ...state,
@@ -71,6 +78,7 @@ export const {
     removeFromCart,
     increaseQuantity,
     decreaseQuantity,
+    emptyBasket,
     setUser,
 } = basketSlice.actions;
 

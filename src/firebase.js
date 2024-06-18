@@ -1,17 +1,22 @@
-// import firebase from './firebase';
+// import { initializeApp } from 'firebase/app';
+import firebase from "firebase/compat/app"
+import "firebase/compat/auth"
+import "firebase/compat/firestore"
 
-// const firebaseConfig = {
-//     apiKey: "AIzaSyBw2fZcrnFIR1iHwcWuyByqkQTWysqO9i0",
-//     authDomain: "spa-clone.firebaseapp.com",
-//     projectId: "spa-clone",
-//     storageBucket: "spa-clone.appspot.com",
-//     messagingSenderId: "815542515039",
-//     appId: "1:815542515039:web:ef052e70b558d0d9e2f2ea"
-// };
+// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+const firebaseConfig = {
+  apiKey: "AIzaSyDsnqJMcu7n4nj2kNJ0LuSFpjVbXX4OsOk",
+  authDomain: "challenge-81f6e.firebaseapp.com",
+  projectId: "challenge-81f6e",
+  storageBucket: "challenge-81f6e.appspot.com",
+  messagingSenderId: "778261875949",
+  appId: "1:778261875949:web:4d5063247754eecd1a90e4",
+  measurementId: "G-7RD06JVNC3"
+};
   
-// const firebaseApp = firebase.initializeApp(firebaseConfig);
+const firebaseApp = firebase.initializeApp(firebaseConfig);
 
-// const db = firebaseApp.firestore();
-// const auth = firebase.auth();
+const db = firebaseApp.firestore();
+const auth = firebase.auth();
 
-// export { db, auth };
+export { db, auth };

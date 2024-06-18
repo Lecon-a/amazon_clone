@@ -1,11 +1,17 @@
 
-function Brand(brand_path) {
+function Brand({ brand_path }) {
   return (
-    <img 
-        src={brand_path} 
-        alt="" 
-        className="header__logo" 
-    />
+    <>
+      {
+        brand_path ?
+          <img 
+              src = { brand_path }
+              alt = ""
+              className = "header__logo"
+          /> 
+          : "SPaICTHub"
+      }
+    </>
   )
 }
 

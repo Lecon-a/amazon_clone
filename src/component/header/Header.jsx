@@ -4,7 +4,7 @@ import { PlaceOutlined, Search } from "@material-ui/icons";
 import { ShoppingBasket } from "@material-ui/icons";
 import { useAppSelector } from "../../redux/hooks";
 import { totalItemSelected } from "../../redux/actions";
-// import { auth } from "../../firebase";
+import { auth } from "../../firebase";
 import Brand from "../Brand";
 
 const brand_path = "http://pngimg.com/uploads/amazon/amazon_PNG11.png";
@@ -16,15 +16,14 @@ const Header = () => {
 
     const handleLogOut = () => {
         if (user) {
-            // auth.signOut();
+            auth.signOut();
         }
     }
 
     return <div className="header__wrapper">
         <div className="header">
             <Link className="header__brand" to={"/"}>
-                SPaICTHub
-                {/* <Brand brand_path={brand_path} /> */}
+                <Brand brand_path={brand_path} />
             </Link>
 
             <div className="header__deliver__to">
@@ -41,7 +40,6 @@ const Header = () => {
                     <option value="spaicthub">SPa ICT Hub</option>
                 </select>
                 <input type="text" className="header__searchInput" />
-                {/* search logo */}
                 <Search className="header__searchLogo" />
             </div>
 

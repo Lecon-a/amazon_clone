@@ -116,3 +116,10 @@
     padding: 10px;
     border-bottom: 1px solid lightgray;
 }
+
+.checkout__user {
+    display: flex;
+    align-items: center;
+    position: relative;
+    padding: 10px;
+}

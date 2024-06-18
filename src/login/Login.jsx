@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import "./Login.css";
-import { Link, useHistory } from 'react-router-dom';
-// import Brand from '../component/Brand';
+import { Link, useNavigate } from 'react-router-dom';
+import Brand from '../component/Brand';
 import { auth } from '../firebase';
 
 const brand_path = "https://upload.wikimedia.org/wikipedia.org/wikipedia/commons/thumb/a/a9/Amazon_logo.svg/1024px-Amazon_logo.svg.png";
@@ -9,7 +9,7 @@ const brand_path = "https://upload.wikimedia.org/wikipedia.org/wikipedia/commons
 function Login() {
 
   // help to programmatically change the url
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const [data, setData] = useState({
     email: '',
@@ -24,7 +24,7 @@ function Login() {
     auth
       .signInWithEmailAndPassword(data.email, data.password)
       .then((auth) => {
-        history.push("/");
+        navigate("/");
       })
       .catch(error => console.log(error.message));
   }
@@ -37,7 +37,7 @@ function Login() {
       .then((auth) => {
         // it successfully created the user with the email and password
         if (auth) {
-          history.push("/");
+          navigate("/");
         }
       })
     .catch(error => alert(error.message));
@@ -60,8 +60,8 @@ function Login() {
   return (
     <div className="login">
       <Link className="login__brand" to={"/"}>
-        SPaICTHub
-        {/* <Brand brand_path={brand_path} /> */}
+        {/* SPaICTHub */}
+        <Brand brand_path={""} />
       </Link>
       <div className="login__form__wrapper">
         <h1>Sign-in</h1>

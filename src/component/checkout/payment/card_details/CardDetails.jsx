@@ -29,14 +29,16 @@ function CardDetails({
         </div>
 
         <div className="summary">
-          <CardElement onChange={cardElementFunction} />
-          <SubTotal
-            isPaymentPage={true}
-            submit={submit}
-            disabled={disabled}
-            succeeded={succeeded}
-            processing={processing}
-          />
+            <div className="stripe__containter">
+                <CardElement onChange={cardElementFunction} />
+            </div>
+            <SubTotal
+                isPaymentPage={true}
+                submit={submit}
+                disabled={disabled}
+                succeeded={succeeded}
+                processing={processing}
+            />
         </div>
       </div>
     </div>

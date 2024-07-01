@@ -28,3 +28,9 @@
 .summary {
     flex: 3;
 }
+
+.stripe__containter {
+    padding: 1.5rem 0;
+    width: 25rem;
+    box-sizing: border-box;
+}

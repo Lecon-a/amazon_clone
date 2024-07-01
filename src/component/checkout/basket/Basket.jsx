@@ -38,7 +38,11 @@ function Basket({ display, item, isPaymentPage }) {
         )}
         <div>
           <small>
-            $<h3>{item.price}</h3>{" "}
+            <h3>
+              ${item.price}{" "}
+              {isPaymentPage &&
+                " x " + item.quantity + " = $" + item.price * item.quantity}
+            </h3>
           </small>
           <small>
             Color:{" "}
@@ -50,21 +54,23 @@ function Basket({ display, item, isPaymentPage }) {
               .map(() => "🌟")}
           </small>
         </div>
-        {!isPaymentPage && <div className="subtotal__buttons">
-          <div className="subtotal__quantity">
-            <button onClick={() => handleDecreaseQuantity(item.id)}>-</button>
-            <small>
-              <strong>{item.quantity}</strong>
-            </small>
-            <button onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+        {!isPaymentPage && (
+          <div className="subtotal__buttons">
+            <div className="subtotal__quantity">
+              <button onClick={() => handleDecreaseQuantity(item.id)}>-</button>
+              <small>
+                <strong>{item.quantity}</strong>
+              </small>
+              <button onClick={() => handleIncreaseQuantity(item.id)}>+</button>
+            </div>
+            <button
+              className="remove__button"
+              onClick={() => handleRemoveItem(item.id)}
+            >
+              Remove
+            </button>
           </div>
-          <button
-            className="remove__button"
-            onClick={() => handleRemoveItem(item.id)}
-          >
-            Remove
-          </button>
-        </div>}
+        )}
       </div>
     </div>
   );

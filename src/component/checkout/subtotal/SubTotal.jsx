@@ -37,7 +37,7 @@ function SubTotal({
               <button onClick={submit} disabled={processing || disabled || succeeded}>
                 <span>{processing ? <p>Processing</p> : "Buy Now"}</span>
               </button>
-              : <button onClick={handleProceedToCheckout}>Proceed to Checkout</button>}
+              : <button disabled={basket.length < 1 && true} onClick={handleProceedToCheckout}>Proceed to Checkout</button>}
           </>
         )}
         decimalScale={2}
